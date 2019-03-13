@@ -112,7 +112,7 @@ RUN conda install --yes --quiet \
 
 RUN Rscript -e 'install.packages("IRkernel", repos="http://cran.cnr.berkeley.edu", lib="/opt/anaconda2/lib/R/library")' \
             -e 'IRkernel::installspec(prefix = "/usr/local")' \
-            -e 'devtools::install_github("apache/spark@v2.4.0", subdir="R/pkg")' && \
+            -e "devtools::install_github(\"apache/spark@v${SPARK_VER}\", subdir=\"R/pkg\")" && \
     fix-permissions $ANACONDA_HOME && \
     fix-permissions /home/$NB_USER
 

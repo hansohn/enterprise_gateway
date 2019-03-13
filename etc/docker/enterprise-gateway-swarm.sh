@@ -42,4 +42,4 @@ docker service create \
 	-e EG_MIRROR_WORKING_DIRS=${EG_MIRROR_WORKING_DIRS} \
 	-e KG_PORT=${KG_PORT} \
 	--name ${EG_NAME} \
-	elyra/enterprise-gateway:VERSION --gateway
+	hansohn/enterprise-gateway:dev --gateway
